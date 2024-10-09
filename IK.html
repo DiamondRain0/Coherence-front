@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <link rel="icon" href="images/fevicon.png" type="image/gif" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>Hostit</title>
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+  <!-- font awesome style -->
+  <link href="css/font-awesome.min.css" rel="stylesheet" />
+
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="css/responsive.css" rel="stylesheet" />
+
+  <style>
+    body, html {
+      height: 100%;
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    .hero_area {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      height: 100vh;
+      background-image: url('images/DALL·E\ 2024-10-09\ 00.01.04\ -\ A\ human\ resources\ character\ in\ a\ similar\ abstract\,\ futuristic\ style\ as\ the\ provided\ image.\ The\ character\ should\ be\ stylized\ with\ geometric\ shapes\,\ vib.webp');
+
+      background-size: 2000px 1000px;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .hero_area::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+    }
+
+    .slider_section {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 1200px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
+
+    .detail-box {
+      background-color: rgba(255, 255, 255, 0.2);
+      padding: 15px;
+      border-radius: 10px;
+      color: rgba(0, 0, 0, 0.8);
+      text-align: center;
+      width: 80%;
+      max-width: 600px;
+    }
+
+    .detail-box h1 {
+      font-size: 28px;
+      line-height: 1.2;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+      text-align: left;
+    }
+
+    .form-group label {
+      font-weight: 500;
+      margin-bottom: 5px;
+    }
+
+    .form-group input {
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      width: 100%;
+    }
+
+    .btn {
+      background-color: rgba(255, 255, 255, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      padding: 10px 20px;
+      color: rgba(0, 0, 0, 0.7);
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+
+    .btn:hover {
+      background-color: rgba(255, 255, 255, 0.5);
+      color: rgba(0, 0, 0, 1);
+    }
+
+    .img-box img {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="hero_area">
+    <!-- header section starts -->
+    <header class="header_section">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container">
+          <a class="navbar-brand" href="index.html">
+            <span>Ana Sayfa</span>
+          </a>
+        </nav>
+      </div>
+    </header>
+    <!-- end header section -->
+
+    <!-- form section -->
+    <section class="slider_section">
+      <div class="detail-box">
+        <h1>Aplikasyon Formu</h1>
+        <form action="#" method="POST">
+          <div class="form-group">
+            <label for="companyName">Firma ismi:</label>
+            <input type="text" id="companyName" name="companyName" class="form-control" placeholder="Lütfen Şirketinizin İsmini Giriniz" required>
+          </div>
+          <div class="form-group">
+            <label for="linkedinUrl">LinkedIn Profil URL'si:</label>
+            <input type="url" id="linkedinUrl" name="linkedinUrl" class="form-control" placeholder="Lütfen Adayın İsmini Giriniz" required>
+          </div>
+          <button type="submit" class="btn">Gönder</button>
+        </form>
+      </div>
+      <div class="img-box">
+        </div>
+    </section>
+    <!-- end form section -->
+
+  </div>
+
+  <!-- jQuery -->
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <!-- bootstrap js -->
+  <script src="js/bootstrap.js"></script>
+  <!-- custom js -->
+  <script src="js/custom.js"></script>
+
+</body>
+
+</html>

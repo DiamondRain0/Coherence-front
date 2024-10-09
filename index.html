@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <link rel="icon" href="images/fevicon.png" type="image/gif" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>Shaolin Keşişleri</title>
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+  <!-- font awesome style -->
+  <link href="css/font-awesome.min.css" rel="stylesheet" />
+
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="css/responsive.css" rel="stylesheet" />
+
+  <style>
+    body, html {
+      height: 100%;
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    .hero_area {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      height: 100vh;
+      background-image: url('images/slider-img.png');
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    /* Adding a transparent overlay for the background */
+    .hero_area::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+    }
+
+    .slider_section {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 1200px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
+
+    .detail-box {
+      background-color: rgba(255, 255, 255, 0.2); /* Transparent background */
+      padding: 15px; /* Reduced padding */
+      border-radius: 10px;
+      color: rgba(0, 0, 0, 0.8); /* Slightly transparent text */
+      text-align: center; /* Center text */
+      width: 80%; /* Reduce width to make it more compact */
+      max-width: 600px; /* Set a max width for responsiveness */
+    }
+
+    .detail-box h1 {
+      font-size: 28px; /* Smaller font size for a more compact look */
+      line-height: 1.2; /* Reduce line height for better compactness */
+    }
+
+    .detail-box p {
+      font-size: 16px; /* Smaller text for compactness */
+      line-height: 1.5; /* Adjust line height */
+    }
+
+    .btn-box {
+      display: flex;
+      justify-content: center; /* Center the buttons */
+      gap: 10px; /* Add space between buttons */
+      margin-top: 15px;
+    }
+
+    .btn-box a {
+      background-color: rgba(255, 255, 255, 0.2); /* Transparent buttons */
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      padding: 10px 15px; /* Adjust padding to make buttons smaller */
+      color: rgba(0, 0, 0, 0.7); /* Slightly transparent button text */
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+
+    .btn-box a:hover {
+      background-color: rgba(255, 255, 255, 0.5); /* Less transparent on hover */
+      color: rgba(0, 0, 0, 1); /* Solid text color on hover */
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="hero_area">
+    <!-- header section starts -->
+    <header class="header_section">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container ">
+          <a class="navbar-brand" href="index.html">
+            <span>Shaolin Keşişleri</span>
+          </a>
+        </nav>
+      </div>
+    </header>
+    <!-- end header section -->
+
+    <!-- slider section -->
+    <section class="slider_section">
+      <div class="detail-box">
+        <h1>
+          Kişi ve Şirket Uyumluluğu
+        </h1>
+        <p>
+          Uygulamamızda iş başvurusunda bulunan adayların başvurduğu ekipler ile uyumluluğu ölçülmektedir. </p>
+        <div class="btn-box">
+          <a href="IK.html" class="btn-1">
+            İnsan Kaynakları
+          </a>
+          <a href="aday.html" class="btn-2">
+            Aday
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- end slider section -->
+  </div>
+
+  <!-- jQery -->
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <!-- bootstrap js -->
+  <script src="js/bootstrap.js"></script>
+  <!-- custom js -->
+  <script src="js/custom.js"></script>
+
+</body>
+
+</html>
