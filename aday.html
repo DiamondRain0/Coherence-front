@@ -42,9 +42,8 @@
       align-items: center;
       position: relative;
       height: 100vh;
-      background-image: url('images/DALL·E\ 2024-10-09\ 00.01.04\ -\ A\ human\ resources\ character\ in\ a\ similar\ abstract\,\ futuristic\ style\ as\ the\ provided\ imae.\ The\ character\ should\ be\ stylized\ with\ geometric\ shapes\,\ vib.webp');
-
-      background-size: 2000px 1000px;
+      background-image: url('images/DALL·E 2024-10-09 00.01.04 - A human resources character in a similar abstract, futuristic style as the provided imae. The character should be stylized with geometric shapes, vib.webp');
+      background-size: contain;
       background-position: center;
       background-repeat: no-repeat;
     }
@@ -122,6 +121,20 @@
       height: auto;
       border-radius: 10px;
     }
+
+    .message {
+      margin-top: 15px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    #results {
+      display: none;
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      color: #fff; /* Style for the results */
+    }
   </style>
 </head>
 
@@ -144,7 +157,7 @@
     <section class="slider_section">
       <div class="detail-box">
         <h1>Aplikasyon Formu</h1>
-        <form action="#" method="POST">
+        <form>
           <div class="form-group">
             <label for="companyName">Firma ismi:</label>
             <input type="text" id="companyName" name="companyName" class="form-control" placeholder="Lütfen Başvurduğunuz Şirketin İsmini Giriniz" required>
@@ -155,9 +168,10 @@
           </div>
           <button type="submit" class="btn">Gönder</button>
         </form>
+        <ul id="results"></ul>
+        <p class="message"></p>
       </div>
-      <div class="img-box">
-        </div>
+      <div class="img-box"></div>
     </section>
     <!-- end form section -->
 
@@ -168,7 +182,76 @@
   <!-- bootstrap js -->
   <script src="js/bootstrap.js"></script>
   <!-- custom js -->
-  <script src="js/custom.js"></script>
+  <script>
+    async function submitForm(event) {
+    event.preventDefault(); // Prevent default form submission
+
+    const companyName = document.getElementById('companyName').value;
+    const linkedinUrl = document.getElementById('linkedinUrl').value;
+
+    // Prepare the request body for the backend
+    const requestBody = {
+        url: linkedinUrl // Ensure this matches your Pydantic model
+    };
+
+    try {
+        const response = await fetch('http://127.0.0.1:8000/url', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify(requestBody), // Convert the request body to JSON
+        });
+
+        // Check if the response is OK
+        if (!response.ok) {
+            const errorText = await response.text();
+            console.error('Response error:', response.status, errorText);
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        // Parse the JSON response from the backend
+        const data = await response.json();
+
+        // Store the data in local storage
+        localStorage.setItem('companyName', companyName);
+        localStorage.setItem('skills', JSON.stringify(data.skills)); // Store skills as JSON string
+        localStorage.setItem('certificates', JSON.stringify(data.certificates)); // Store certificates as JSON string
+
+        // Redirect to result.html
+        window.location.href = 'result.html'; // Redirect without parameters
+
+    } catch (error) {
+        console.error('Error:', error); // Handle any errors that occurred during the fetch
+    }
+}
+
+
+    // Function to display results on the page
+    function displayResults(skills, certificates) {
+      const resultsList = document.getElementById('results');
+      resultsList.style.display = 'block'; // Show the results list
+
+      // Clear previous results
+      resultsList.innerHTML = '';
+
+      // Display skills
+      const skillsItem = document.createElement('li');
+      skillsItem.textContent = `Skills: ${skills.join(', ')}`; // Display skills
+      resultsList.appendChild(skillsItem);
+
+      // Display certificates
+      const certificatesItem = document.createElement('li');
+      certificatesItem.textContent = `Certificates: ${certificates.join(', ')}`; // Display certificates
+      resultsList.appendChild(certificatesItem);
+
+      document.querySelector('.message').textContent = 'Here are the results:';
+    }
+
+    // Attach event listener to form
+    document.querySelector('form').addEventListener('submit', submitForm);
+  </script>
 
 </body>
 

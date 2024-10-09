@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Basic -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/fevicon.png" type="image/gif" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Results</title>
+
+    <!-- bootstrap core css -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+    <!-- fonts style -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+    <!-- font awesome style -->
+    <link href="css/font-awesome.min.css" rel="stylesheet" />
+
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet" />
+    <!-- responsive style -->
+    <link href="css/responsive.css" rel="stylesheet" />
+
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .hero_area {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            height: 100vh;
+            background-image: url('images/DALL·E 2024-10-09 00.01.04 - A human resources character in a similar abstract, futuristic style as the provided image. The character should be stylized with geometric shapes, vib.webp');
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .hero_area::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+        }
+
+        .results {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 15px;
+            border-radius: 10px;
+            color: rgba(0, 0, 0, 0.8);
+            text-align: left;
+        }
+
+        h1 {
+            font-size: 28px;
+            line-height: 1.2;
+            text-align: center;
+        }
+
+        p {
+            margin: 10px 0;
+        }
+
+        strong {
+            color: rgba(0, 0, 0, 0.8);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="hero_area">
+        <div class="container" style="min-height: 300px;max-width: 500px;">
+            <h1>Application Results</h1>
+            <div class="results"style="min-height: 300px;">
+                <p><strong>Company Name:</strong> <span id="companyName"></span></p>
+                <p><strong>Suggested Skills:</strong> <span id="skills"></span></p>
+                <p><strong>Suggested Certificates:</strong> <span id="certificates"></span></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Display the results on the page from local storage
+        function displayResults() {
+            const companyName = localStorage.getItem('companyName') || 'N/A';
+            const skills = JSON.parse(localStorage.getItem('skills')) || [];
+            const certificates = JSON.parse(localStorage.getItem('certificates')) || [];
+
+            document.getElementById('companyName').textContent = companyName;
+            document.getElementById('skills').textContent = skills.join(', ') || 'N/A'; // Join skills array to string
+            document.getElementById('certificates').textContent = certificates.join(', ') || 'N/A'; // Join certificates array to string
+        }
+
+        // Call the function to display results
+        displayResults();
+    </script>
+</body>
+
+</html>
